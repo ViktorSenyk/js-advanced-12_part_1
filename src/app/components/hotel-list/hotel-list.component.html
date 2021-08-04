@@ -1,0 +1,34 @@
+<div class="countries-table" *ngIf="hotelsArr !== undefined">
+
+  <form ngForm #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <table class="table table-hover table-dark text-light">
+      <thead class="thead-light">
+        <tr>
+          <th></th>
+          <th>Hotel name</th>
+          <th>City</th>
+          <th>Available from</th>
+          <th>Available until</th>
+          <th>Available places</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hotel of arrForView"
+          [ngClass]="{'alert alert-danger': hotel.availablePlaces === 0, 'bg-success': checker.checked}">
+          <td><input type="checkbox" [name]="hotel.name" [title]="hotel.name" [disabled]="hotel.availablePlaces === 0"
+              [ngModel]="hotel.isChecked" #checker (change)="onUnCheck(checker)">
+          </td>
+          <td>{{ hotel.name }}</td>
+          <td>{{ hotel.city }}</td>
+          <td>{{ hotel.availableFrom | date:"yyyy-MM-dd" }}</td>
+          <td>{{ hotel.availableUntil | date:"yyyy-MM-dd" }}</td>
+          <td>{{ hotel.availablePlaces }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <input class="btn btn-success form-control w-25" type="submit" value="Add to hotels list">
+  </form>
+  <ngb-pagination class="d-flex justify-content-center" [collectionSize]="collectionSize" [(page)]="page"
+    [pageSize]="pageSize" (pageChange)="onPageChange()">
+  </ngb-pagination>
+</div>

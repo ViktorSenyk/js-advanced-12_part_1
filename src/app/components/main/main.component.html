@@ -1,0 +1,33 @@
+<div class="container">
+  <app-side-bar></app-side-bar>
+</div>
+<main class="main p-3 text-light font-weight-bold">
+  <div class="about container" *ngIf="blockSchema.aboutUs">
+    <h2>About us:</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, numquam. Fugiat fugit quisquam ex nostrum
+      quas eos odit deleniti, aspernatur, consequuntur nobis dignissimos iure. Sequi earum iure ullam similique
+      voluptates? Incidunt mollitia molestias nobis, doloribus nisi quisquam maxime suscipit voluptatibus tempore
+      explicabo exercitationem maiores et cumque itaque sed ipsum velit.</p>
+    <div class="block d-flex">
+      <div>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, at non fugiat tempora, odio quisquam eaque
+          doloremque asperiores commodi inventore veritatis modi? Sunt perferendis reiciendis doloremque voluptate,
+          quibusdam aperiam sint.
+        </p>
+      </div>
+
+      <div class="mx-3">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum quia iusto velit fugiat, saepe illum
+          recusandae sapiente sequi culpa ipsum debitis, earum quo nam? Fugit incidunt nostrum velit vel voluptas?</p>
+      </div>
+      <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati neque ab, enim magnam sapiente omnis quam
+          laborum qui aspernatur nihil id ea perspiciatis ratione est adipisci veritatis, cumque minus. Voluptas.</p>
+      </div>
+    </div>
+  </div>
+
+  <app-countries-list *ngIf="blockSchema.countriesList"></app-countries-list>
+  <app-hotel-list *ngIf="blockSchema.hotelList"></app-hotel-list>
+  <app-ticket-list *ngIf="blockSchema.ticketList"></app-ticket-list>
+</main>

@@ -1,0 +1,9 @@
+.logo-img {
+  background: #ccc;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.header {
+  background: rgba(255, 255, 255, 0.3);
+}

@@ -1,0 +1,32 @@
+<div class="countries-table" *ngIf="countriesArr !== undefined">
+
+  <form ngForm #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <table class="table table-hover table-dark text-light">
+      <thead class="thead-light">
+        <tr>
+          <th></th>
+          <th>Country</th>
+          <th>Travel Status</th>
+          <th>Available hotels</th>
+          <th>Available tours</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let country of arrForView"
+          [ngClass]="{'alert alert-danger': country.travelStatus === false, 'bg-success': checker.checked}">
+          <td><input type="checkbox" [name]="country.name" [title]="country.name" [disabled]="!country.travelStatus"
+              [ngModel]="country.isChecked" #checker (change)="onUnCheck(checker)">
+          </td>
+          <td>{{ country.name }}</td>
+          <td><span *ngIf="country.travelStatus">Open</span> <span *ngIf="!country.travelStatus">Closed</span></td>
+          <td>{{ country.hotelsCount }}</td>
+          <td>{{ country.hotelsCount }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <input class="btn btn-success form-control w-25" type="submit" value="Add to countries list">
+  </form>
+  <ngb-pagination class="d-flex justify-content-center" [collectionSize]="collectionSize" [(page)]="page"
+    [pageSize]="pageSize" (pageChange)="onPageChange()">
+  </ngb-pagination>
+</div>

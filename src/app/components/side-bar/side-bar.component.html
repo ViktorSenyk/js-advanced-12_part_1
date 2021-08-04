@@ -1,0 +1,16 @@
+<div class="side-bar my-1">
+  <div class="navbar">
+    <div class="w-25 btn-wraper rounded">
+      <button class="btn form-control font-weight-bold text-dark" (click)="showCountries()">Country</button>
+    </div>
+    <div class="w-25 btn-wraper rounded">
+      <button class="btn form-control font-weight-bold text-dark" (click)="showHotels()">Book a hotel</button>
+    </div>
+    <div class="w-25 btn-wraper rounded">
+      <button class="btn form-control font-weight-bold text-dark" (click)="showAirlines()">Buy a ticket</button>
+    </div>
+
+  </div>
+
+</div>
+<app-modal *ngIf="modal" [message]="message" (toggleModal)="toggleModal()"></app-modal>

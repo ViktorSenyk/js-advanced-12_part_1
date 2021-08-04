@@ -1,0 +1,10 @@
+<div class="popup w-25 alert alert-danger">
+  <div class="content">
+    <strong>{{ message }}</strong>
+  </div>
+  <div class="button navbar">
+    <button class="btn btn-sm btn-outline-success mt-2 w-25" *ngIf="confirm"
+      (click)="this.ifConfirm.emit()">{{ confirm }}</button>
+    <button class="btn btn-sm btn-outline-dark mt-2 w-25" (click)="this.toggleModal.emit()">Close</button>
+  </div>
+</div>
